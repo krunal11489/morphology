@@ -1,0 +1,17 @@
+close all;
+clear;
+I = imread('kakafull.jpg');
+J = rgb2gray(I);
+figure,imshow(J);
+[m,n]=size(J);
+ for i=1:m;
+     for j=1:n;
+         x=J(i,j);
+         if(x>128)
+             K(i,j)=true;
+         else
+             K(i,j)=false;
+         end   
+     end
+ end
+ figure,imshow(K);

@@ -1,0 +1,6 @@
+close all;
+clear;
+I = imread('man.tif');
+
+figure,imshow(I);
+

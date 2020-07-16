@@ -1,0 +1,15 @@
+clc;
+clear;
+close all;
+a=uint8(zeros(256,256));
+a(150,150)=uint8(255);
+a(100,200)=uint8(255);
+a(175,100)=uint8(255);
+a(75,50)=uint8(255);
+subplot(1,2,1),imshow(a),title('Original Image');
+theta=0:180;
+[p,q]=radon(a,theta);
+subplot(1,2,2);
+imshow(p,[],'Xdata',theta,'Ydata',q,'InitialMagnification','fit');
+title('Radon transform of an Image');
+colormap(hot),colorbar;

@@ -1,0 +1,56 @@
+%implements s2_b0_mmeh_0_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(2, 0)> %% lsmrl5t5nd
+
+%assign tlcOutputsFcnOfS1B0 = OpaqueTLCBlockFcn("Outputs", 1, 0, 0, 2)
+lsmrl5t5nd = *ehhaj0uax1 + localDW->enbaypj5ps;
+mbk4b5vrx2 = (*gyojmgiysr >= lsmrl5t5nd);
+%<tlcOutputsFcnOfS1B0>\
+oi1zkcqqng = (lsmrl5t5nd >= *gwk3cowc3i);
+if (mbk4b5vrx2 && oi1zkcqqng) {
+    *cb3yipslmm = lsmrl5t5nd;
+} else if (oi1zkcqqng) {
+    *cb3yipslmm = *gyojmgiysr;
+} else {
+    *cb3yipslmm = *gwk3cowc3i;
+}
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(0, 2, 4)>
+%endif
+%if SLibCG_ArgAccessed(0, 2, 4)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && IsModelRefScalableBuild())
+%<SLibCG_UndoAccessArg(0, 2, 4)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void sldemo_mdlref_counter(\
+%assign comma = ""
+%<comma>const real_T *gyojmgiysr\
+%assign comma = ", "
+%<comma>const real_T *ehhaj0uax1\
+%assign comma = ", "
+%<comma>const real_T *gwk3cowc3i\
+%assign comma = ", "
+%<comma>real_T *cb3yipslmm\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 2, 4) && (!IsModelReferenceBaseSys(::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]) || !IsModelRefScalableBuild())
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>i2gtqi4qiu *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+
+%assign localVarDecl = ""
+%openfile localVarDecl
+boolean_T mbk4b5vrx2;
+boolean_T oi1zkcqqng;
+
+%closefile localVarDecl
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

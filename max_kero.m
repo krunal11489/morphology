@@ -1,0 +1,11 @@
+function[k]=max_kero(I,se)
+J=I;k=0;
+while(1)
+    J=ero_m(J,se);
+    if(J==false)
+        break;
+    else
+        k=k+1;
+    end
+end
+end

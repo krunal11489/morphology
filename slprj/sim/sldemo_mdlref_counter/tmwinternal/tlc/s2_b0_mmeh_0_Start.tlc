@@ -1,0 +1,30 @@
+%implements s2_b0_mmeh_0_Start "C"
+
+%function Start(block, system) Output
+%assign tlcStartFcnOfS1B0 = OpaqueTLCBlockFcn("Start", 1, 0, 0, 0)
+%<tlcStartFcnOfS1B0>\
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Start", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Start"))
+%<SLibCG_AccessArg(0, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Start", rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Start"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && IsModelRefScalableBuild())
+%<SLibCG_UndoAccessArg(0, 0, 0)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void agz0fugz0s(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 0, 0) && (!IsModelReferenceBaseSys(::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]) || !IsModelRefScalableBuild())
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(0, 0, 1)
+%<comma>i2gtqi4qiu *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

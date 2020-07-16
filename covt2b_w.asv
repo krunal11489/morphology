@@ -1,0 +1,29 @@
+close all;
+I = imread('football.jpg');
+J = rgb2gray(I);
+figure,imshow(J);
+[m,n]=size(J);
+for i=1:m;
+     for j=1:n;
+        K(i,j)=0;
+     end
+end 
+% k=0:255;
+% for p=1:256
+%     c(p)= 0;
+% end
+ for i=1:m;
+     for j=1:n;
+         x=J(i,j);
+         if(x>128)
+             K(i,j)=255;
+         end
+         
+     end
+ end
+ figure,imshow(k);
+%         c(x+1)=c(x+1)+1;
+%     end
+% end
+% figure,stem(k,c);
+% figure,imhist(J);

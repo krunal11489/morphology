@@ -1,0 +1,32 @@
+close all;
+fs = 1000;
+t = 0:1/fs:1;
+a = sin(2*pi*50*t);
+title('sinusoidal wave');
+figure,plot(t,a),axis([0 0.2 -2 2]);
+%64 point fft
+b = fft(a,64);
+title('16 point fft');
+figure,plot((1:64),b);
+c=abs(b);
+title('absolute value of fft');
+figure,plot((1:64),c);
+t1=1000*linspace(0,1,64);
+title('frequency spectra');
+figure,plot(t1,c),axis([0 500 0 30]);
+d=ifft(b);
+title('regenerated sine wave using inverse fft');
+figure,plot(t(1:64),d);
+%16 point fft
+b1 = fft(a,512);
+title('');
+figure,plot((1:512),b1);
+c1=abs(b1);
+title('');
+figure,plot((1:512),c1);
+t2=1000*linspace(0,1,512);
+title('');
+figure,plot(t2,c1),axis([0 500 0 30]);
+d1=ifft(b1);
+title('');
+figure,plot(t(1:512),d1);

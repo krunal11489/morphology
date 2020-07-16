@@ -1,0 +1,2 @@
+close all;
+I1 = imread('fig1.tif');

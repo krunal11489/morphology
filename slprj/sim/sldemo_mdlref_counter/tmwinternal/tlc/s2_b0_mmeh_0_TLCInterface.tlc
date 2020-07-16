@@ -1,0 +1,50 @@
+%implements s2_b0_mmeh_0_TLCInterface "C"
+
+%function getInputAddr_1_0_0_0_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0)> %% lsmrl5t5nd
+
+%return "&lsmrl5t5nd"
+%endfunction
+
+%function getInput_1_0_0_0_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0)> %% lsmrl5t5nd
+
+%return "lsmrl5t5nd"
+%endfunction
+
+%function getDWorkAddr_1_0_0_0_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(0 ,0, 1)>
+
+%return "&localDW->js1wy44pb2"
+%endfunction
+
+%function getDWork_1_0_0_0_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(0 ,0, 1)>
+
+%return "localDW->js1wy44pb2"
+%endfunction
+
+%function getInputAddr_1_0_0_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0)> %% lsmrl5t5nd
+
+%return "&lsmrl5t5nd"
+%endfunction
+
+%function getInput_1_0_0_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0)> %% lsmrl5t5nd
+
+%return "lsmrl5t5nd"
+%endfunction
+
+%function getDWorkAddr_1_0_0_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(0 ,2, 5)>
+
+%return "&localDW->js1wy44pb2"
+%endfunction
+
+%function getDWork_1_0_0_2_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_AccessArg(0 ,2, 5)>
+
+%return "localDW->js1wy44pb2"
+%endfunction
+

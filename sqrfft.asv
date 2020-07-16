@@ -1,0 +1,23 @@
+close all;
+fs = 1000;
+t = 0:1/fs:1;
+a = square(2*pi*50*t);
+figure,plot(t,a),axis([0 0.2 -2 2]);
+%64 point fft
+b = fft(a,64);
+figure,plot((1:64),b);
+c=abs(b);
+figure,plot((1:64),c);
+t1=1000*linspace(0,1,64);
+figure,plot(t1,c);
+d=ifft(b);
+figure,plot(t(1:64),d);
+%16 point fft
+b1 = fft(a,512);
+figure,plot((1:512),b1);
+c1=abs(b1);
+figure,plot((1:512),c1);
+t2=1000*linspace(0,1,512);
+figure,plot(t2,c1);
+d1=ifft(b1);
+figure,plot(t(1:512),d1);

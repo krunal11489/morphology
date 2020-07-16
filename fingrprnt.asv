@@ -1,0 +1,10 @@
+clear;
+close all;
+I=imread('fingerprint.tif');
+se=stlm;
+J=erosion(I,se);
+K=dilation(J,se);
+L=dilation(K,se);
+M=erosion(L,se);
+subplot(1,2,1),imshow(I);
+subplot(1,2,2),imshow(J);

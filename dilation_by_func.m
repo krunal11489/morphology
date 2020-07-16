@@ -1,0 +1,10 @@
+clear;
+close all;
+I = imread('text_gaps.tif');
+se=[0 1 0;1 1 1;0 1 0];
+J=dil_m(I,se);
+% se=true(1,3);
+% K=dilation(J,se);
+subplot(1,2,1),imshow(I);
+subplot(1,2,2),imshow(J);
+%figure,imshow(J);

@@ -1,0 +1,29 @@
+%implements s2_b0_mmeh_0_Update "C"
+
+%function Update(block, system) Output
+localDW->enbaypj5ps = *cb3yipslmm;
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Update", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Update"))
+%<SLibCG_AccessArg(0, 3, 1)>
+%endif
+%if SLibCG_ArgAccessed(0, 3, 1)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Update", rtmArgSys.CurrentTID, SLibSystemFcnRateGrouping(rtmArgSys, "Update"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && IsModelRefScalableBuild())
+%<SLibCG_UndoAccessArg(0, 3, 1)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void edzd5yvevz(\
+%assign comma = ""
+%<comma>real_T *cb3yipslmm\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 3, 1) && (!IsModelReferenceBaseSys(::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]) || !IsModelRefScalableBuild())
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>i2gtqi4qiu *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

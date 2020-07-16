@@ -1,0 +1,24 @@
+close all;
+clear;
+J = imread('pa.tif');
+%J = rgb2gray(I);
+figure,imshow(J);
+[m,n]=size(J);
+ for i=1:m;
+     for j=1:n;
+         x=J(i,j);
+         K(i,j)=255-x;
+%          if(x>128)
+%              K(i,j)=true;
+%          else
+%              K(i,j)=false;
+%          end   
+     end
+ end
+ figure,imshow(K);
+%   for i=1:m;
+%      for j=1:n;
+%          K(i,j)=not(K(i,j));
+%      end
+%   end
+%   figure,imshow(K);

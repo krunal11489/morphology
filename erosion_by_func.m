@@ -1,0 +1,10 @@
+clear;
+close all;
+I = imread('wirebond.tif');
+%I=I(:,:,1);
+se=stlm;
+J=ero_m(I,se);
+subplot(1,2,2),imshow(J);
+% se=true(25,25);
+% J=ero_m(I,se);
+subplot(1,2,1),imshow(I);

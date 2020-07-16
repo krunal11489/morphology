@@ -1,0 +1,34 @@
+clear;clc;close all;
+I=imread('hm2.tif');
+disp('enter shape and size of window ');
+w=stlm;
+disp('enter shape and size of s.e.');
+x=stlm;
+%w=true(121,121);
+%x=true(101,101);
+b1=x;
+[m n]=size(w);
+[m1 n1]=size(x);
+a1=(m-m1)/2;a2=(n-n1)/2;
+t=false(m,n);
+for i=1:m1
+    for j=1:n1
+        t(i+a1,j+a2)=x(i,j);
+    end
+end
+b2=w-t;
+t1=ero_m(I,b1);
+t2=dil_m(I,b2);
+t3=t1-t2;
+subplot(2,2,1),imshow(I);
+subplot(2,2,2),imshow(t1);
+subplot(2,2,3),imshow(t2);
+subplot(2,2,4),imshow(t3);
+figure,imshow(t3);
+% I=false(500,500);
+% I(100:400,50:175)=true;
+% I(350:450,300:400)=true;
+% I(200:300,200:300)=true;
+% I(230:280,400:450)=true;
+% figure,imshow(I);
+% imwrite(I,'hm2.tif');

@@ -1,0 +1,24 @@
+clear;
+close all;
+l=256;
+r1=l/3;s1=l/8;
+r2=5*l/8;s2=;
+m1=s1/r1;
+m2=(s2-s1)/(r2-r1);
+m3=(l-1-s2)/(l-1-r2);
+I=imread('intensity_ramp.tif');
+figure,imshow(I);
+[m n]=size(I);
+for i=1:m;
+    for j=1:n;
+        x=I(i,j);
+        if(x<=r1)
+            J(i,j)=s1+(m1*(x-r1));
+        elseif(x>r1 && x<=r2)
+            J(i,j)=s2+(m2*(x-r2));
+        else
+            J(i,j)=s2+(m3*(x-r2));
+        end
+    end
+end
+figure,imshow(J);
